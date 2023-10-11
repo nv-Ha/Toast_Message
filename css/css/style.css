@@ -1,0 +1,140 @@
+#toast {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 999999;
+  }
+
+.toast{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.toast+.toast {
+    margin-top: 25px;
+}
+
+@keyframes smoothLeft{
+    from{
+        opacity: 0;
+        transform: translateX(calc(100% + 35px));
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes delayNone{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.toast__content{
+    font-family: Arial, Helvetica, sans-serif;
+    flex-grow: 1;
+}
+
+.toast__tittle{
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+
+.toast__text{
+    font-size: 15px;
+    padding-top: 5px;
+}
+.toast__close{
+    font-size: 20px;
+    color: rgba(161, 161, 161, 1);
+    padding-right: 15px;
+}
+
+.toast--success{
+    border-color: rgb(83, 138, 0);
+    border-left: rgb(83, 138, 0) 7px solid;
+    z-index: 999;
+}
+
+.toast--success .toast__icon{
+    color: green;
+    font-size: 20px;
+    padding: 0 15px;
+}
+
+.toast--info{
+    border-left: rgb(0, 78, 138) 7px solid;
+    border-color: rgb(0, 78, 138);
+    z-index: 999;
+}
+.toast--info .toast__icon{
+    color: blue;
+    font-size: 20px;
+    padding: 0 15px;
+}
+
+.toast--error{
+    border-left: 7px solid;
+    border-color: rgb(233, 198, 0);
+    z-index: 999;
+}
+
+.toast--error .toast__icon{
+    color: rgb(225, 206, 0);
+    font-size: 20px;
+    padding: 0 15px;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    min-width: 100px;
+    transition: opacity 0.2s ease;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 10px;
+}
+
+.btn:nth-child(1){
+    background-color: green;
+}
+.btn:nth-child(3){
+    background-color: rgb(214, 186, 0);
+}
+.btn:nth-child(2){
+    background-color: rgb(0, 78, 138);
+}
+
+body > div {
+    margin: auto;
+  }
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Helvetica Neue";
+    background-color: #f4f4f5;
+  }
+
+  .text{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 200px;
+    letter-spacing: 0.5px;
+  }
